@@ -51,6 +51,9 @@ int main (int argc, char* argv[])
 string greet (string name)
 {
 	// CODE HERE
+	cout << "what's your name?\n";
+	cin >> name;
+	cout << "Hello," << name << "!" << endl;
 }
 
 /*
@@ -64,6 +67,12 @@ string greet (string name)
 string checkExperience (char hasExperience)
 {
 	// CODE HERE
+	if (hasExperience == Y) {
+	    cout << "Welcome back!\n";
+	}
+	else {
+	    cout << "Get ready to have some fun!\n";
+	}
 }
 
 /*
