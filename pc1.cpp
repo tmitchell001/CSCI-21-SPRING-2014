@@ -21,7 +21,7 @@ int main (int argc, char* argv[])
 	string userName;
 	// 2 declare a char variable named programmedBefore
 	//   and initialize programmedBefore to the value 'z'
-	char programmedBefore = z;
+	char programmedBefore = 'z';
 	// 3 display a welcome message to standard output
 	cout << "Welcome!\n";
 	// 4 prompt the user for a name
@@ -51,9 +51,7 @@ int main (int argc, char* argv[])
 string greet (string name)
 {
 	// CODE HERE
-	cout << "what's your name?\n";
-	cin >> name;
-	cout << "Hello," << name << "!" << endl;
+	return "Nice to meet you, " + name;
 }
 
 /*
@@ -67,11 +65,11 @@ string greet (string name)
 string checkExperience (char hasExperience)
 {
 	// CODE HERE
-	if (hasExperience == Y) {
-	    cout << "Welcome back!\n";
+		if (hasExperience == 'Y') {
+	    return "Welcome back!\n";
 	}
 	else {
-	    cout << "Get ready to have some fun!\n";
+	    return "Get ready to have some fun!\n";
 	}
 }
 
