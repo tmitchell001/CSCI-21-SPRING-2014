@@ -5,6 +5,7 @@
 #include <cmath>
 #include <iostream>
 #include <sstream>
+#include <cstring>
 using namespace std;
 
 string goldilocks (string item, int number);
@@ -50,7 +51,7 @@ int main (int argc, char* argv[])
  */
 string goldilocks (string item, int number)
 {
-  if (item == porridge || item == Porridge) {
+  if (item == "porridge" || item == "Porridge") {
       if (number == 1) {
           return "This porridge is too hot!";
       }
@@ -61,7 +62,7 @@ string goldilocks (string item, int number)
           return "This porridge is just right.";
       }
   }
-  if (item == chair || item == Chair) {
+  if (item == "chair" || item == "Chair") {
       if (number == 1) {
           return "This chair is too big!";
       }
@@ -101,6 +102,8 @@ string goldilocks (string item, int number)
  */
 int rockScissorPaper (char playerOne, char playerTwo)
 {
+  playerOne = toupper(playerOne);
+  playerTwo = toupper(playerTwo);
   switch (playerOne) {
       case 'R':
         switch (playerTwo) {
@@ -150,7 +153,7 @@ int rockScissorPaper (char playerOne, char playerTwo)
  */
 int asciiValue (char c)
 {
-	// CODE HERE
+return static_cast<int>(c);
 }
 
 /*
@@ -160,7 +163,10 @@ int asciiValue (char c)
  */
 string toLower (string input)
 {
-	// CODE HERE
+  for (int i = 0; i <= input.length(); i++) {
+    input[i] = tolower(input[i]);
+    }
+return input;
 }
 
 /*
@@ -170,7 +176,10 @@ string toLower (string input)
  */
 string toUpper (string input)
 {
-	// CODE HERE
+for (int i = 0; i <= input.length(); i++) {
+  input[i] = toupper(input[i]);
+}
+return input;
 }
 
 /*
@@ -184,7 +193,7 @@ string toUpper (string input)
  */
 char getCharacter (string input, int charIndex)
 {
-	// CODE HERE
+return input[charIndex];
 }
 
 /*
