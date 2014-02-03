@@ -101,9 +101,46 @@ string goldilocks (string item, int number)
  */
 int rockScissorPaper (char playerOne, char playerTwo)
 {
-	// CODE HERE
+  switch (playerOne) {
+      case 'R':
+        switch (playerTwo) {
+            case 'R':
+              return 3;
+              break;
+            case 'S':
+              return 1;
+              break;
+            case 'P':
+              return 2;
+              break;
+        }
+        case 'S':
+          switch (playerTwo) {
+          case 'R':
+            return 2;
+            break;
+          case 'S':
+            return 3;
+            break;
+          case 'P':
+            return 1;
+            break;
+        }
+        case 'P':
+          switch (playerTwo) {
+              case 'R':
+                return 1;
+                break;
+              case 'S':
+                return 2;
+                break;
+              case 'P':
+                return 3;
+                break;
+            }
+        return 0;
+  }
 	
-	// YOU MUST USE A SWITCH IN THIS FUNCTION
 }
 
 /*
