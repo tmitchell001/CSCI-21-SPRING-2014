@@ -50,7 +50,39 @@ int main (int argc, char* argv[])
  */
 string goldilocks (string item, int number)
 {
-	// CODE HERE
+  if (item == porridge || item == Porridge) {
+      if (number == 1) {
+          return "This porridge is too hot!";
+      }
+      if (number == 2) {
+          return "This porridge is too cold!";
+      }
+      else {
+          return "This porridge is just right.";
+      }
+  }
+  if (item == chair || item == Chair) {
+      if (number == 1) {
+          return "This chair is too big!";
+      }
+      if (number == 2) {
+          return "This chair is too big!";
+      }
+      else {
+          return "This chair is just right.";
+      }
+  }
+  else {
+      if (number == 1) {
+        return "This bed is too hard!";
+        }
+      if (number == 2) {
+          return "This bed is too soft!";
+      }
+      else {
+          return "This bed is just right.";
+      }
+  }
 }
 
 /*
