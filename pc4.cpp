@@ -50,8 +50,9 @@ int main (int argc, char* argv[])
  */
 string makeString (string label, double value, char separator)
 {
-string returnString;
-returnString = label + " " + separator;
+stringstream returnString;
+returnString << label << " " << separator << " " << value;
+return returnString;
 }
 
 /*
@@ -64,7 +65,14 @@ returnString = label + " " + separator;
  */
 char stringToChar (string value)
 {
-	// CODE HERE
+  if (string.length() > 1 || string.length() = 0) {
+    return /0;  
+  }
+  else {
+      char valueChar = value[1];
+      return valueChar;
+  }
+  
 }
 
 /*
@@ -101,7 +109,17 @@ int stringToInt (string value)
  */
 double stringToDouble (string value)
 {
-	// CODE HERE
+  float fvalue = 0;
+	stringstream converter(value);
+	converter.exceptions(ios_base::failbit);
+
+	try
+	{
+		converter >> fvalue;
+	}
+	catch (ios_base::failure f) {}
+	
+	return fvalue;
 }
 
 /*
@@ -117,7 +135,12 @@ double stringToDouble (string value)
  */
 bool stringToBool (string value)
 {
-	// CODE HERE
+  if (value[1] == 't' || value[1] == 'T') {
+      return true;
+  }
+  else {
+      return false;
+  }
 }
 
 /*
