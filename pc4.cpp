@@ -52,9 +52,10 @@ string makeString (string label, double value, char separator)
 {
 stringstream String;
 String << label << " " << separator << " " << value;
-string returnString;
-String >> returnString;
-return returnString;
+//string returnString;
+//String >> returnString;
+//return returnString;
+return String.str();
 }
 
 /*
@@ -111,7 +112,7 @@ int stringToInt (string value)
  */
 double stringToDouble (string value)
 {
-  float fvalue = 0;
+  double fvalue = 0;
 	stringstream converter(value);
 	converter.exceptions(ios_base::failbit);
 
