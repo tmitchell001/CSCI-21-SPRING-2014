@@ -50,8 +50,10 @@ int main (int argc, char* argv[])
  */
 string makeString (string label, double value, char separator)
 {
-stringstream returnString;
-returnString << label << " " << separator << " " << value;
+stringstream String;
+String << label << " " << separator << " " << value;
+string returnString;
+String >> returnString;
 return returnString;
 }
 
@@ -65,11 +67,11 @@ return returnString;
  */
 char stringToChar (string value)
 {
-  if (string.length() > 1 || string.length() = 0) {
-    return /0;  
+  if (value.length() > 1 || value.length() == 0) {
+    return '\0';  
   }
   else {
-      char valueChar = value[1];
+      char valueChar = value[0];
       return valueChar;
   }
   
@@ -135,7 +137,7 @@ double stringToDouble (string value)
  */
 bool stringToBool (string value)
 {
-  if (value[1] == 't' || value[1] == 'T') {
+  if (value[0] == 't' || value[0] == 'T') {
       return true;
   }
   else {
