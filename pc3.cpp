@@ -51,6 +51,13 @@ int main (int argc, char* argv[])
  */
 string goldilocks (string item, int number)
 {
+	// Grader comments 2014.02.05
+	//
+	// Make sure your output matches the requirements exactly. The
+	// unit test (which determines whether your program is "correct")
+	// isn't smart enough to know the difference between punctuation
+	// and completely incorrect output.
+	//
   if (item == "porridge" || item == "Porridge") {
       if (number == 1) {
           return "This porridge is too hot!";
