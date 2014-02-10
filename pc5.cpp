@@ -154,12 +154,12 @@ int main (int argc, char* argv[])
  * characters in s, digitCount should contain a count of the number of digits in s.
  */
  int getStats(string s, int &alphaCount, int &digitCount) {
-   
+    alphaCount = digitCount = 0;
     for (int i = 0; i < s.length(); i++) {
-        if (isdigit(s[i]) == true) {
+        if (isdigit(s[i])) {
            digitCount++;
         }
-        else if (isalpha(s[i]) == true)
+        else if (isalpha(s[i]))
           alphaCount++;
     }
      return s.length();
