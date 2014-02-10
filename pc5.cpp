@@ -154,14 +154,15 @@ int main (int argc, char* argv[])
  * characters in s, digitCount should contain a count of the number of digits in s.
  */
  int getStats(string s, int &alphaCount, int &digitCount) {
-    return s.length();
-    for (int i = 0; i <= s.length; i++) {
-        if (s[i].isDigit == true) {
+   
+    for (int i = 0; i < s.length(); i++) {
+        if (isdigit(s[i]) == true) {
            digitCount++;
         }
-        else 
+        else if (isalpha(s[i]) == true)
           alphaCount++;
     }
+     return s.length();
  }
 
 /*
@@ -176,8 +177,8 @@ int main (int argc, char* argv[])
  */
  string buildMessage(string s = "", bool allCaps = false) {
     if (allCaps == true) {
-    for (int i = 0; i <= s.length; i++) {
-        s[i] = s[i].toUpper();
+    for (int i = 0; i <= s.length(); i++) {
+        s[i] = toupper(s[i]);
     }
     }
     if (s == "" || s == " ") {
