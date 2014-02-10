@@ -18,4 +18,4 @@ pc4: pc4.cpp
 # Target for programming challenge 5
 # date completed: 2-10-2014
 pc5: pc5.cpp
-    gK++ -o pc5 pc5.cpp
+    gK++ -o pc5 pc5.cpp  
