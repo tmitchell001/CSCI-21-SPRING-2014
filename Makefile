@@ -12,6 +12,18 @@
 # I left the tab character there so you can
 # experiment with finding it if you're interested.
 #
+#
+# Grader comments 2014.02.10
+#
+# Still no joy on the makefile. Be sure to use it
+# for building your assignment before turning it
+# in. That way you'll know it works. Note that
+# the tab character is preventing the makefile from
+# processing properly, and there's a typo in your
+# build command for pc5. Also don't forget to
+# add in the FLAGS Boyd mentioned in class on
+# Monday. Let me know if I can help. --Rob
+#
 # Makefile for programming challenges
 #
 # CSCI 21, Spring 2014

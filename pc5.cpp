@@ -1,6 +1,15 @@
 /*
  * Programming Challenge 5
  */
+//
+// Grader comments 2014.02.10
+//
+// This code runs fine, but it won't compile if you turn on all
+// the flags Boyd showed us in class on Monday. I think he'll let
+// me warn you rather than giving you a zero, but be sure to get
+// those flags into your Makefile, and use the Makefile to build
+// your code so you know that everything works properly. --Rob
+//
 #include <cassert>
 #include <iostream>
 #include <sstream>
