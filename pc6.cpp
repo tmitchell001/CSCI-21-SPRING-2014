@@ -58,8 +58,9 @@ bool hasValue (int values[], int size, int value) {
  *         sets error to true
  */
 int valueAt (int values[], int size, int index, bool& error) {
-    if (values[index] >= 0 || values[index] <= 0) {
+    if (index >= size || index < 0) {
       error = true;
+      return 0;
     }
     else
     error = false;
@@ -75,7 +76,7 @@ int valueAt (int values[], int size, int index, bool& error) {
 int sum (int values[], int size) {
   int sum = 0;
     for (int i = 0; i < size; i++) {
-      values[i] += sum;
+      sum += values[i];
   }
   return sum;
 }
