@@ -21,10 +21,12 @@ using namespace std;
  */
 string prepareForDisplay (int values[], int size, char separator = ',') {
   int i = 0;
+  stringstream returnString;
     for (i; i < size - 1; i++) {
-      return values[i] + ",";
+      returnString << values[i] << separator;
       }
-    cout << values[i];
+  returnString << values[i];
+  return returnString.str();
 }
 
 /*
