@@ -36,7 +36,7 @@ string prepareForDisplay (int values[], int size, char separator = ',') {
  */
 bool hasValue (int values[], int size, int value) {
     for (int i = 0; i < size; i++) {
-      if (value[i] = value) {
+      if (values[i] = value) {
           return true;
       }
       else 
@@ -70,7 +70,13 @@ int valueAt (int values[], int size, int index, bool& error) {
  * @param size the size of the integer array values
  * @return an integer containing a sum of the values in the array
  */
-int sum (int values[], int size);
+int sum (int values[], int size) {
+  int sum = 0;
+    for (int i = 0; i < size; i++) {
+      values[i] += sum;
+  }
+  return sum;
+}
 
 /*
  * Swap the positions of two values in an integer array. This function 
@@ -80,7 +86,11 @@ int sum (int values[], int size);
  * @param index1 the position of the first value to be swapped
  * @param index2 the position of the second value to be swapped
  */
-void swapValues (int values[], int index1, int index2);
+void swapValues (int values[], int index1, int index2) {
+  int hold = values[index1];
+  values[index1] = values[index2];
+  values[index2] = hold;
+}
 
 /* for unit testing -- do not alter */
 template <typename X, typename A>
