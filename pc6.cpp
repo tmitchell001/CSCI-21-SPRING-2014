@@ -1,3 +1,10 @@
+//
+// Grader comments 2012.02.13
+//
+// Time to work on that makefile. I have to give you a zero
+// on this assignment because I can't build your code with
+// the makefile. Sorry! Let me know if you need help. --Rob
+//
 /*
  * Programming Challenge 6
  */
