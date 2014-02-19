@@ -47,34 +47,41 @@ int main (int argc, char* argv[])
 	return 0;
 }
 
+bool processFile (string filename) {
+int nextline;
 ifstream filein("challenge-7-input.txt");
 if (filein.good() == true) {
-  while (!filein.eof()) {
+    while (!filein.eof()) {
+     
       filein >> nextline;
-        switch(nextline)
-        case 10 {
+        switch(nextline) {
+        case 10:
           onTen();
           break;
-        }
-        case 20 {
+        
+        case 20:
           onTwenty();
           break;
-        }
-        case 30 {
+        
+        case 30:
           onThirty();
           break;
-        }
-        case 40 {
+        
+        case 40:
           onForty();
           break;
-        }
-        case 50 {
+        
+        case 50:
           onFifty();
           break;
-        }
-        else 
+          
+        default:
         onError();
+        break;
+        }
   }
+  return true;
+}
 }
 
 /*
