@@ -47,6 +47,7 @@ string upAndDown (string theString) {
       toLower(theString[i]);
     }
   }
+  return theString;
 }
 
 int countWords (string theString) {
@@ -55,15 +56,33 @@ int countWords (string theString) {
       if (theString[i] == ' ') 
       count++;
   }
+  return count;
 }
 int computeAverage (int values [], int arraySize){
-    
+  int sum;
+  int average;
+  for (int i = 0; i <= arraySize; i++) {
+    sum = values[i] + sum;
+  }
+  sum / arraySize = average;
+  return average;
 }
+
 int findMinValue (int values [], int arraySize) {
-    
+  int smallest = 100000;
+  for (int i = 0; i <= arraySize; i++) {
+    if (values[i] < smallest) {
+      values[i] = smallest;
+    }
+return smallest;
 }
 int findMaxValue (int values [], int arraySize) {
-    
+    int smallest = 0;
+  for (int i = 0; i <= arraySize; i++) {
+    if (values[i] > smallest) {
+      values[i] = smallest;
+    }
+  return smallest;
 }
 
 /*
