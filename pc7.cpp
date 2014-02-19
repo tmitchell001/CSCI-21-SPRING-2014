@@ -40,7 +40,7 @@ template <typename X, typename A>
 void btassert(A assertion);
 void unittest ();
 
-int main (int argc, char* argv[])
+int main ()
 {
 	unittest();
 	
@@ -49,7 +49,7 @@ int main (int argc, char* argv[])
 
 bool processFile (string filename) {
 int nextline;
-ifstream filein("challenge-7-input.txt");
+ifstream filein(filename.c_str());
 if (filein.good() == true) {
     while (!filein.eof()) {
      
@@ -82,6 +82,7 @@ if (filein.good() == true) {
   }
   return true;
 }
+return false;
 }
 
 /*

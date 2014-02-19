@@ -28,14 +28,33 @@ int main (int argc, char* argv[])
 
 void countCharacters (string theString, int& alpha, int& num) {
     for (int i = 0; i <= (length(theString)); i++) {
-        if ()
+        if (isalpha(theString[i]) == true) {
+          alpha++;
+        }
+        else if (isdigit(theString[i]) == true) {
+          digit++;
+        }
     }
 }
+
 string upAndDown (string theString) {
-    
+  int switchOff = 1;
+  for (int i = 0; i <= length(theString); switchOff++, i++) {
+    if (switchOff%2 == 0) {
+      toUpper(theString[i]);
+    }
+    else if (switchOff%2 == 1) {
+      toLower(theString[i]);
+    }
+  }
 }
+
 int countWords (string theString) {
-    
+  int count = 2;
+  for (int i = 0; i <= length(theString); i++) {
+      if (theString[i] == ' ') 
+      count++;
+  }
 }
 int computeAverage (int values [], int arraySize){
     
