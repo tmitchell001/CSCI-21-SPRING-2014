@@ -28,23 +28,61 @@ int main (int argc, char* argv[])
 
 void countCharacters (string theString, int& alpha, int& num) {
     for (int i = 0; i <= (length(theString)); i++) {
-        if ()
+        if (isalpha(theString[i]) == true) {
+          alpha++;
+        }
+        else if (isdigit(theString[i]) == true) {
+          digit++;
+        }
     }
 }
+
 string upAndDown (string theString) {
-    
+  int switchOff = 1;
+  for (int i = 0; i <= length(theString); switchOff++, i++) {
+    if (switchOff%2 == 0) {
+      toUpper(theString[i]);
+    }
+    else if (switchOff%2 == 1) {
+      toLower(theString[i]);
+    }
+  }
+  return theString;
 }
+
 int countWords (string theString) {
-    
+  int count = 2;
+  for (int i = 0; i <= length(theString); i++) {
+      if (theString[i] == ' ') 
+      count++;
+  }
+  return count;
 }
 int computeAverage (int values [], int arraySize){
-    
+  int sum;
+  int average;
+  for (int i = 0; i <= arraySize; i++) {
+    sum = values[i] + sum;
+  }
+  sum / arraySize = average;
+  return average;
 }
+
 int findMinValue (int values [], int arraySize) {
-    
+  int smallest = 100000;
+  for (int i = 0; i <= arraySize; i++) {
+    if (values[i] < smallest) {
+      values[i] = smallest;
+    }
+return smallest;
 }
 int findMaxValue (int values [], int arraySize) {
-    
+    int smallest = 0;
+  for (int i = 0; i <= arraySize; i++) {
+    if (values[i] > smallest) {
+      values[i] = smallest;
+    }
+  return smallest;
 }
 
 /*
