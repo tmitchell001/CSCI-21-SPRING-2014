@@ -5,6 +5,7 @@
 #include <climits>
 #include <iostream>
 #include <string>
+#include <limits>
 using namespace std;
 
 void countCharacters (string theString, int& alpha, int& num);
@@ -95,19 +96,20 @@ int computeAverage (int values [], int arraySize){
 
 int findMinValue (int values [], int arraySize) {
 //begin by giving the "smallest" value the largest one feasable.
-  int smallest = 1000000000;
+  int smallest = numeric_limits<int>::max();
 //the function will now loop through, checking the variable smallest against each number in the array.
 //since the original value for smallest was so ridiculously high, the first value is guaranteed to take.
   for (int i = 0; i < arraySize; i++) {
     if (values[i] < smallest) {
       values[i] = smallest;
+      cout << smallest;
     }
 }
 return smallest;
 }
 
 int findMaxValue (int values[], int arraySize) {
-  int largest = 0;
+  int largest = -(numeric_limits<int>::max());
   for (int i = 0; i < arraySize; i++) {
     if (values[i] > largest) {
       values[i] = largest;
