@@ -21,10 +21,7 @@ void unittest ();
 
 int main (int argc, char* argv[])
 {
-    	int values [] = {10, 20, 30};
-	computeAverage(values, 3); 
 	unittest();
-
 	return 0;
 }
 
@@ -87,33 +84,37 @@ int countWords (string theString) {
 int computeAverage (int values [], int arraySize){
   int sum = 0;
   int average = 0;
-  for (int i = 0; i <= arraySize; i++) {
+  //loops through the array, adding each number in turn to the sum//
+  for (int i = 0; i < arraySize; i++) {
     sum = values[i] + sum;
   }
-  
+  //calculates average based on sum of array and its size.
   average = sum / arraySize;
   return average;
-  cout << average;
 }
 
 int findMinValue (int values [], int arraySize) {
-  int smallest = 100000;
+//begin by giving the "smallest" value the largest one feasable.
+  int smallest = 1000000000;
+//the function will now loop through, checking the variable smallest against each number in the array.
+//since the original value for smallest was so ridiculously high, the first value is guaranteed to take.
   for (int i = 0; i <= arraySize; i++) {
     if (values[i] < smallest) {
       values[i] = smallest;
     }
-return smallest;
 }
+cout << smallest;
+return smallest;
 }
 
 int findMaxValue (int values[], int arraySize) {
-    int smallest = 0;
+  int largest = 0;
   for (int i = 0; i <= arraySize; i++) {
-    if (values[i] > smallest) {
-      values[i] = smallest;
+    if (values[i] > largest) {
+      values[i] = largest;
     }
-  return smallest;
 }
+return largest;
 }
 /*
  * Unit testing functions. Do not alter.
