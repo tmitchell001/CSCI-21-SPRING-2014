@@ -22,7 +22,7 @@ using namespace std;
 string prepareForDisplay (int values[], int size, char separator = ',') {
   int i = 0;
   stringstream returnString;
-    for (i; i < size - 1; i++) {
+    for (i = 0; i < size - 1; i++) {
       returnString << values[i] << separator;
       }
   returnString << values[i];
@@ -38,12 +38,11 @@ string prepareForDisplay (int values[], int size, char separator = ',') {
  */
 bool hasValue (int values[], int size, int value) {
     for (int i = 0; i < size; i++) {
-      if (values[i] = value) {
+      if (values[i] == value) {
           return true;
       }
-      else 
-        return false;
     }
+ return false;
 }
 
 /*
@@ -100,7 +99,7 @@ template <typename X, typename A>
 void btassert(A assertion);
 void unittest ();
 
-int main (int argc, char* argv[])
+int main ()
 {
 	unittest();
 	
