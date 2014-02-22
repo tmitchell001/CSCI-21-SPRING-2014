@@ -22,62 +22,62 @@ void unittest ();
 
 int main (int argc, char* argv[])
 {
-	unittest();
-	return 0;
+  unittest();
+  return 0;
 }
 
 void countCharacters (string theString, int& alpha, int& num) {
-    alpha = 0;
-    num = 0;
-    // Loops through the string, testing first if each char is an alpha, then digit.
+  alpha = 0;
+  num = 0;
+// Loops through the string, testing first if each char is an alpha, then digit.
     for (int i = 0; i <= (theString.length()); i++) {
-        if (!(isalpha(theString[i]) == false)) {
-          alpha++;
+      if (!(isalpha(theString[i]) == false)) {
+        alpha++;
         }
         else if (isdigit(theString[i]) == true) {
-          num++;
+        num++;
         }
     }
 }
 
 string upAndDown (string theString) {
-    //variable will change through each iteration,
-    //on evens, uppercase will run, on odds, lowercase will run
+//variable will change through each iteration,
+//on evens, uppercase will run, on odds, lowercase will run
   int switchOff = 2;
   for (int i = 0; i <= theString.length(); switchOff++, i++) {
     if (switchOff%2 == 0) {
-      theString[i] = toupper(theString[i]);
+    theString[i] = toupper(theString[i]);
     }
     else if (switchOff%2 == 1) {
-      theString[i] = tolower(theString[i]);
+    theString[i] = tolower(theString[i]);
     }
   }
   return theString;
 }
 
 int countWords (string theString) {
-    //this int will keep track of the number of spaces.
+//this int will keep track of the number of spaces.
   int count = 0;
-  //loops through the string, counting the number of spaces.
+//loops through the string, counting the number of spaces.
   for (int i = 0; i <= theString.length(); i++) {
-      if (theString[i] == ' ') 
+    if (theString[i] == ' ') 
       count++;
   }
-  //for dealing with single-word entries - checks both that the  count is zero (there are no spaces) and the string is not empty.
+//for dealing with single-word entries - checks both that the  count is zero (there are no spaces) and the string is not empty.
   if (count == 0 && theString != "") {
-      return 1;
+    return 1;
   }
-  //for dealing with 2-word (one space entries)
+//for dealing with 2-word (one space entries)
   if (count == 1) {
-      return 2;
+    return 2;
   }
-  //for dealing with entries involving more than one word.
-   if (count > 1) {
+//for dealing with entries involving more than one word.
+  if (count > 1) {
   count = count + 1;
-   }
-   //for dealing with empty strings
-   if (count == 0 && theString == ""){
-       return 0;
+  }
+//for dealing with empty strings
+  if (count == 0 && theString == ""){
+   return 0;
    }
   return count;
 }
@@ -85,11 +85,11 @@ int countWords (string theString) {
 int computeAverage (int values [], int arraySize){
   int sum = 0;
   int average = 0;
-  //loops through the array, adding each number in turn to the sum//
+//loops through the array, adding each number in turn to the sum//
   for (int i = 0; i < arraySize; i++) {
     sum = values[i] + sum;
-  }
-  //calculates average based on sum of array and its size.
+}
+//calculates average based on sum of array and its size.
   average = sum / arraySize;
   return average;
 }
@@ -101,18 +101,18 @@ int findMinValue (int values [], int arraySize) {
 //since the original value for smallest was so ridiculously high, the first value is guaranteed to take.
   for (int i = 0; i < arraySize; i++) {
     if (values[i] < smallest) {
-      values[i] = smallest;
-      cout << smallest;
+      smallest = values[i];
     }
 }
 return smallest;
 }
 
+//Works on the same principle as findMinValue, but in reverse.
 int findMaxValue (int values[], int arraySize) {
   int largest = -(numeric_limits<int>::max());
   for (int i = 0; i < arraySize; i++) {
     if (values[i] > largest) {
-      values[i] = largest;
+      largest = values[i];
     }
 }
 return largest;
