@@ -21,51 +21,79 @@ void unittest ();
 
 int main (int argc, char* argv[])
 {
+    	int values [] = {10, 20, 30};
+	computeAverage(values, 3); 
 	unittest();
-	
+
 	return 0;
 }
 
 void countCharacters (string theString, int& alpha, int& num) {
-    for (int i = 0; i <= (length(theString)); i++) {
-        if (isalpha(theString[i]) == true) {
+    alpha = 0;
+    num = 0;
+    // Loops through the string, testing first if each char is an alpha, then digit.
+    for (int i = 0; i <= (theString.length()); i++) {
+        if (!(isalpha(theString[i]) == false)) {
           alpha++;
         }
         else if (isdigit(theString[i]) == true) {
-          digit++;
+          num++;
         }
     }
 }
 
 string upAndDown (string theString) {
-  int switchOff = 1;
-  for (int i = 0; i <= length(theString); switchOff++, i++) {
+    //variable will change through each iteration,
+    //on evens, uppercase will run, on odds, lowercase will run
+  int switchOff = 2;
+  for (int i = 0; i <= theString.length(); switchOff++, i++) {
     if (switchOff%2 == 0) {
-      toUpper(theString[i]);
+      theString[i] = toupper(theString[i]);
     }
     else if (switchOff%2 == 1) {
-      toLower(theString[i]);
+      theString[i] = tolower(theString[i]);
     }
   }
   return theString;
 }
 
 int countWords (string theString) {
-  int count = 2;
-  for (int i = 0; i <= length(theString); i++) {
+    //this int will keep track of the number of spaces.
+  int count = 0;
+  //loops through the string, counting the number of spaces.
+  for (int i = 0; i <= theString.length(); i++) {
       if (theString[i] == ' ') 
       count++;
   }
+  //for dealing with single-word entries - checks both that the  count is zero (there are no spaces) and the string is not empty.
+  if (count == 0 && theString != "") {
+      return 1;
+  }
+  //for dealing with 2-word (one space entries)
+  if (count == 1) {
+      return 2;
+  }
+  //for dealing with entries involving more than one word.
+   if (count > 1) {
+  count = count + 1;
+   }
+   //for dealing with empty strings
+   if (count == 0 && theString == ""){
+       return 0;
+   }
   return count;
 }
+
 int computeAverage (int values [], int arraySize){
-  int sum;
-  int average;
+  int sum = 0;
+  int average = 0;
   for (int i = 0; i <= arraySize; i++) {
     sum = values[i] + sum;
   }
-  sum / arraySize = average;
+  
+  average = sum / arraySize;
   return average;
+  cout << average;
 }
 
 int findMinValue (int values [], int arraySize) {
@@ -76,7 +104,9 @@ int findMinValue (int values [], int arraySize) {
     }
 return smallest;
 }
-int findMaxValue (int values [], int arraySize) {
+}
+
+int findMaxValue (int values[], int arraySize) {
     int smallest = 0;
   for (int i = 0; i <= arraySize; i++) {
     if (values[i] > smallest) {
@@ -84,7 +114,7 @@ int findMaxValue (int values [], int arraySize) {
     }
   return smallest;
 }
-
+}
 /*
  * Unit testing functions. Do not alter.
  */
