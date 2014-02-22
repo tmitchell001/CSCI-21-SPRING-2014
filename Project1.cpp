@@ -20,7 +20,7 @@ template <typename X, typename A>
 void btassert(A assertion);
 void unittest ();
 
-int main (int argc, char* argv[])
+int main ()
 {
   unittest();
   return 0;
@@ -29,22 +29,24 @@ int main (int argc, char* argv[])
 void countCharacters (string theString, int& alpha, int& num) {
   alpha = 0;
   num = 0;
+  int length = theString.length();
 // Loops through the string, testing first if each char is an alpha, then digit.
-    for (int i = 0; i <= (theString.length()); i++) {
-      if (!(isalpha(theString[i]) == false)) {
-        alpha++;
-        }
-        else if (isdigit(theString[i]) == true) {
-        num++;
-        }
+  for (int i = 0; i < length; i++) {
+    if (!(isalpha(theString[i]) == false)) {
+    alpha++;
     }
+    else if (isdigit(theString[i]) == true) {
+    num++;
+    }
+  }
 }
 
 string upAndDown (string theString) {
 //variable will change through each iteration,
 //on evens, uppercase will run, on odds, lowercase will run
   int switchOff = 2;
-  for (int i = 0; i <= theString.length(); switchOff++, i++) {
+  int length = theString.length();
+  for (int i = 0; i < length; switchOff++, i++) {
     if (switchOff%2 == 0) {
     theString[i] = toupper(theString[i]);
     }
@@ -58,8 +60,9 @@ string upAndDown (string theString) {
 int countWords (string theString) {
 //this int will keep track of the number of spaces.
   int count = 0;
+  int length = theString.length();
 //loops through the string, counting the number of spaces.
-  for (int i = 0; i <= theString.length(); i++) {
+  for (int i = 0; i < length; i++) {
     if (theString[i] == ' ') 
       count++;
   }
@@ -69,7 +72,7 @@ int countWords (string theString) {
   }
 //for dealing with 2-word (one space entries)
   if (count == 1) {
-    return 2;
+  return 2;
   }
 //for dealing with entries involving more than one word.
   if (count > 1) {
@@ -77,22 +80,23 @@ int countWords (string theString) {
   }
 //for dealing with empty strings
   if (count == 0 && theString == ""){
-   return 0;
-   }
+  return 0;
+  }
   return count;
 }
 
 int computeAverage (int values [], int arraySize){
   int sum = 0;
   int average = 0;
-//loops through the array, adding each number in turn to the sum//
+  //loops through the array, adding each number in turn to the sum//
   for (int i = 0; i < arraySize; i++) {
     sum = values[i] + sum;
-}
+  }
 //calculates average based on sum of array and its size.
   average = sum / arraySize;
   return average;
 }
+
 
 int findMinValue (int values [], int arraySize) {
 //begin by giving the "smallest" value the largest one feasable.
@@ -103,19 +107,19 @@ int findMinValue (int values [], int arraySize) {
     if (values[i] < smallest) {
       smallest = values[i];
     }
-}
-return smallest;
+  }
+  return smallest;
 }
 
 //Works on the same principle as findMinValue, but in reverse.
 int findMaxValue (int values[], int arraySize) {
-  int largest = -(numeric_limits<int>::max());
+  int largest = numeric_limits<int>::min();
   for (int i = 0; i < arraySize; i++) {
     if (values[i] > largest) {
       largest = values[i];
     }
-}
-return largest;
+  }
+  return largest;
 }
 /*
  * Unit testing functions. Do not alter.
