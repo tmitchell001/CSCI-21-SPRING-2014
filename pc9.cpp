@@ -91,7 +91,7 @@ template <typename X, typename A>
 void btassert(A assertion);
 void unittest ();
 
-int main (int argc, char* argv[])
+int main ()
 {
 	unittest();
 	
@@ -102,8 +102,8 @@ int main (int argc, char* argv[])
  * Set the name of this Spaceship.
  * @param newName a string containing a name for this Spaceship
  */
-void setName (string newName) {
-    newName = name;
+void Spaceship::setName (string newName) {
+    name = newName;
 }
 		
 /*
@@ -111,31 +111,31 @@ void setName (string newName) {
  * @param newTopSpeed a float containing a top speed for this Spaceship
  *        in warp
  */
-void setTopSpeed (float newTopSpeed) {
-    newTopSpeed = topSpeed;
+void Spaceship::setTopSpeed (float newTopSpeed) {
+    topSpeed = newTopSpeed;
 }
 		
 /*
  * Set the fuel source of this Spaceship.
  * @param newFuelSource a string containing a fuel source for this Spaceship
  */
-void setFuelSource (string newFuelSource) {
-    newFuelSource = fuelSource;
+void Spaceship::setFuelSource (string newFuelSource) {
+    fuelSource = newFuelSource;
 }
 		
 /*
  * Set the crew capacity of this Spaceship.
  * @param newCrewCapacity an int containing a crew capacity for this Spaceship
  */
-void setCrewCapacity (int newCrewCapacity) {
-    newCrewCapacity = crewCapacity;
+void Spaceship::setCrewCapacity (int newCrewCapacity) {
+    crewCapacity = newCrewCapacity;
 }
 		
 /*
  * Get the name of this Spaceship.
  * @return a string containing the name of this Spaceship
  */
-string getName () const {
+string Spaceship::getName () const {
     return name;
 }
 	
@@ -143,7 +143,7 @@ string getName () const {
  * Get the top speed of this Spaceship.
  * @return a float containing the top speed of this Spaceship
  */
-float getTopSpeed () const {
+float Spaceship::getTopSpeed () const {
     return topSpeed;
 }
 		
@@ -151,7 +151,7 @@ float getTopSpeed () const {
  * Get the fuel source of this Spaceship.
  * @return a string containing the fuel source of this Spaceship
  */
-string getFuelSource () const {
+string Spaceship::getFuelSource () const {
     return fuelSource;
 }
 		
@@ -159,7 +159,7 @@ string getFuelSource () const {
  * Get the crew capacity of this Spaceship.
  * @return an int containing the crew capacity of this Spaceship
  */
-int getCrewCapacity () const {
+int Spaceship::getCrewCapacity () const {
     return crewCapacity;
 }
 		
@@ -171,11 +171,11 @@ int getCrewCapacity () const {
  * contain the values of the associated member variables.
  * @return a string representation of this Spaceship's specifications
  */
-string toString () const {
+string Spaceship::toString () const {
     stringstream formatting;
-    formatting << name << "top speed:" << topSpeed: warp << "fuel source:" << fuelSource << "crew capacity: " << crewCapacity;
-    string.str(formatting);
-    return formatting;
+    formatting.setf(ios::showpoint);
+    formatting << name << ", top speed: warp " << setprecision(3) << topSpeed << ", fuel source: " << fuelSource << ", crew capacity: " << crewCapacity;
+    return formatting.str();
 }
 
 /*
