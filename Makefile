@@ -43,3 +43,8 @@ pc7: pc7.cpp
 # date completed: 2-21-2014
 Project1: Project1.cpp
 	g++ $(FLAGS) -o Project1 Project1.cpp
+
+# Target for programming challenge 8
+# date completed: 2-24-2014
+pc8: pc8.cpp
+	g++ $(FLAGS) -o pc8 pc8.cpp
