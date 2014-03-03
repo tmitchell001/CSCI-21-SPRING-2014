@@ -57,7 +57,7 @@ template <typename X, typename A>
 void btassert(A assertion);
 void unittest ();
 
-int main (int argc, char* argv[])
+int main ()
 {
 	unittest();
 	
@@ -78,13 +78,18 @@ int main (int argc, char* argv[])
 	    if (targetUnits == 'M') {
 	        temp = temp - 32;
 	        temp = temp * (5/9);
+	        return temp;
 	        //Metric conversion
 	    }
 	    else if (targetUnits == 'I') {
+	        temp = temp * 1.8000;
+	        temp = temp + 32;
+	        return temp;
 	        //Imperial conversion
 	    }
 	    else
 	        cerr << "Incorrect Units";
+	        return 0;
 	}
 		
 /*
@@ -110,6 +115,7 @@ int main (int argc, char* argv[])
 	    }
 	    else
 	        cerr << "Incorrect Units";
+	        return 0;
 	}
 
 /*
