@@ -74,6 +74,26 @@ int main ()
  *        to imperial
  * @return a float containing the converted temperature
  */
+
+//
+// Grader comments 2010.03.04
+//
+// 1. It's typically not a good idea to change the passed-in
+//		variables. In an academic environment it's not a big
+//		deal, but in a professional environment it's not done.
+//		It mostly has to do with maintaining and debugging the
+//		code; your reader will have an easier time of it if
+//		he can rely on the passed-in variables remaining
+//		constant. In fact, most of the time when you're not
+//		passing built-in types, you'll pass them as const or
+//		const reference.
+//
+// 2. It's ok to return an expression, as in
+//		return (temp - 32)*(5.0/9);
+//
+// 3. Careful about indentations. Everything should start right up
+//		against the "wall".
+//
 	float Converter::convertTemperature (float temp, char targetUnits) {
 	    if (targetUnits == 'M') {
             temp = fahrenheitToCelsius(temp);
