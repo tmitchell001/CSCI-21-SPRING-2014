@@ -13,7 +13,7 @@ class Prize
 {
 	public:
 	
-		Prize(newName, newValue);
+		Prize(string newName = "no name!", unsigned int newValue = 0);
 	
 		/*
 		 * Constructor.
@@ -55,7 +55,7 @@ class SecretDoor
 		 * @param newPrize Prize containing a Prize that is "hidden" behind this secret door; default argument 
 		 *        is Prize()
 		 */
-		 SecretDoor();
+		 SecretDoor(unsigned int number = 1, Prize prize = Prize());
 		/*
 		 * Get this SecretDoor's number.
 		 * @return an unsigned int containing this SecretDoor's number
@@ -65,7 +65,7 @@ class SecretDoor
 		 * Get this SecretDoor's Prize.
 		 * @return the Prize, by reference, "hidden behind" this SecretDoor
 		 */
-		 Prize getPrize();
+		Prize& getPrize();
 		
 	private:
 	
@@ -78,7 +78,7 @@ template <typename X, typename A>
 void btassert(A assertion);
 void unittest ();
 
-int main (int argc, char* argv[])
+int main ()
 {
 	unittest();
 	
@@ -87,18 +87,17 @@ int main (int argc, char* argv[])
 
 // CODE HERE -- FUNCTION DEFINITIONS FOR PRIZE; USE INITIALIZER SECTION FOR CONSTRUCTOR
 	
-		Prize(newName, newValue) {
-		    if (newValue == 100) {
-		        for (int i = 0; i < newValue; i++) {
-		            newName[i].toUpper();
-		        }
-		    }
-		    else
-		        newName = "no Name!"
-		    }
-		    newValue = 0;
-		}
-	
+
+		 Prize::Prize(string newName, unsigned int newValue) {
+		     if (newValue > 100) {
+		         for (unsigned int i = 0; i < newName.length(); i++) {
+		             newName[i] = toupper(newName[i]);
+		         }
+		     }
+		     name = newName;
+		     value = newValue;
+		 }
+		 
 		/*
 		 * Constructor.
 		 * @param newName string containing a name for this Prize; default argument is "no name!";
@@ -106,22 +105,15 @@ int main (int argc, char* argv[])
 		 *        at the end of name
 		 * @param newValue unsigned int containing a value for this Prize; default argument is 0
 		 */
-		 Prize(newName = "no name!", newValue = 0) {
-		     if (newValue > 100) {
-		         for (int i = 0; i < newValue.length(); i++) {
-		             newValue[i] = newValue[i].toUpper();
-		         }
-		     }
-		 }
 		 
-	    string getName() {
+	    string Prize::getName() {
 	        return name;
 	    }
 		/*
 		 * Get this Prize's name
 		 * @return a string containing this Prize's name
 		 */
-		unsigned int getValue(){
+		unsigned int Prize::getValue(){
 		    return value;
 		}
 
@@ -133,22 +125,23 @@ int main (int argc, char* argv[])
 		 * @param newPrize Prize containing a Prize that is "hidden" behind this secret door; default argument 
 		 *        is Prize()
 		 */
-		 SecretDoor(newNumber = 1, newPrize = Prize()) {
-	     	     
+		 SecretDoor::SecretDoor(unsigned int newNumber, Prize newPrize) {
+	     	   number = newNumber;
+	     	   prize = newPrize;
 		 }
 		/*
 		 * Get this SecretDoor's number.
 		 * @return an unsigned int containing this SecretDoor's number
 		 */
-		unsigned int getNumber() {
+		unsigned int SecretDoor::getNumber() {
 		    return number;
 		}
 		/*
 		 * Get this SecretDoor's Prize.
 		 * @return the Prize, by reference, "hidden behind" this SecretDoor
 		 */
-		 prize getPrize() {
-		     return &Prize();
+		 Prize& SecretDoor::getPrize() {
+		     return prize;
 		 }
 /*
  * Unit testing functions. Do not alter.
