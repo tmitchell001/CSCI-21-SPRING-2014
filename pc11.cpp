@@ -88,6 +88,15 @@ int main ()
 // CODE HERE -- FUNCTION DEFINITIONS FOR PRIZE; USE INITIALIZER SECTION FOR CONSTRUCTOR
 	
 
+	//
+	// Grader comments 2014.03.06
+	//
+	// Check the instructions for the constructor again. This should add a "!" to the
+	// end of the prize name if newValue > 100.
+	//
+	// Also, start top-level stuff with no indentation. For example, functions.
+	// Prize::Prize should start right up against the wall. --Rob
+	//
 		 Prize::Prize(string newName, unsigned int newValue) {
 		     if (newValue > 100) {
 		         for (unsigned int i = 0; i < newName.length(); i++) {
