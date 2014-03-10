@@ -61,7 +61,7 @@ template <typename X, typename A>
 void btassert(A assertion);
 void unittest ();
 
-int main (int argc, char* argv[])
+int main ()
 {
 	unittest();
 	
@@ -74,8 +74,9 @@ int main (int argc, char* argv[])
  * @return a pointer to the newly allocated integer array
  */
 int* makeDynoIntArray (unsigned int size) {
-    new int* theArray[size];
-    return array;
+    int* theArray = NULL;
+    theArray = new int [size];
+    return theArray;
 }
 
 /*
@@ -95,7 +96,7 @@ void clearDynoIntArray (int*& theArray) {
  */
 int sum (int* theArray, unsigned int arraySize) {
     int sum = 0;
-    for (int i = 0; i < arraySize; i++) {
+    for (unsigned int i = 0; i < arraySize; i++) {
         sum = sum + theArray[i];
     }
     return sum;
@@ -113,11 +114,12 @@ int max (int* theArray, unsigned int arraySize) {
     if (theArray == NULL) {
         throw ArrayException("NULL ARRAY REFERENCE");
     }
-    for(int i = 0; i < arraySize; i++) {
+    for(unsigned int i = 0; i < arraySize; i++) {
         if (theArray[i] > max) {
             max = theArray[i];
         }
     }
+    return max;
 }
 
 /*
@@ -132,11 +134,12 @@ int min (int* theArray, unsigned int arraySize) {
     if (theArray == NULL) {
         throw ArrayException("NULL ARRAY REFERENCE");
     }
-    for(int i = 0; i < arraySize; i++) {
-        if (theArray[i] > max) {
-            max = theArray[i];
+    for(unsigned int i = 0; i < arraySize; i++) {
+        if (theArray[i] > min) {
+            min = theArray[i];
         }
     }
+    return min;
 }
 
 
