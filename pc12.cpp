@@ -68,6 +68,15 @@ int main ()
 	return 0;
 }
 
+//
+// Grader comments 2014.03.12
+//
+// Don't duplicate the comments. I assume that you duplicated them in
+// order to be able to refer to them easily while you implement the
+// functions (that's what I would do too). But delete them before you
+// commit to github.
+//
+
 /*
  * Allocate memory for a dynamic array of integers.
  * @param size the desired size of the dynamic array
@@ -85,6 +94,11 @@ int* makeDynoIntArray (unsigned int size) {
  */
 void clearDynoIntArray (int*& theArray) {
     delete [] theArray;
+	//
+	// Grader comments 2014.03.12
+	//
+	// delete is good, but you also have to set theArray = NULL;
+	//
 }
 
 /*
@@ -135,6 +149,13 @@ int min (int* theArray, unsigned int arraySize) {
         throw ArrayException("NULL ARRAY REFERENCE");
     }
     for(unsigned int i = 0; i < arraySize; i++) {
+	//
+	// Grader comments 2014.03.12
+	//
+	// The only problem here is the > symbol. Should be < instead.
+	// Let me know if you want any help getting your code to run
+	// before you turn it in. It's my job to help you guys out. --Rob
+	//
         if (theArray[i] > min) {
             min = theArray[i];
         }
