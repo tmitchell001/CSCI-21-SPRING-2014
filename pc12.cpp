@@ -124,10 +124,10 @@ int sum (int* theArray, unsigned int arraySize) {
  * @throw ArrayException with the message "NULL ARRAY REFERENCE" if theArray is NULL
  */
 int max (int* theArray, unsigned int arraySize) {
-    int max = 0;
     if (theArray == NULL) {
         throw ArrayException("NULL ARRAY REFERENCE");
     }
+    int max = theArray[0];
     for(unsigned int i = 0; i < arraySize; i++) {
         if (theArray[i] > max) {
             max = theArray[i];
@@ -144,10 +144,10 @@ int max (int* theArray, unsigned int arraySize) {
  * @throw ArrayException with the message "NULL ARRAY REFERENCE" if theArray is NULL
  */
 int min (int* theArray, unsigned int arraySize) {
-    int min = 0;
     if (theArray == NULL) {
         throw ArrayException("NULL ARRAY REFERENCE");
     }
+    int min = theArray[0];
     for(unsigned int i = 0; i < arraySize; i++) {
 	//
 	// Grader comments 2014.03.12
