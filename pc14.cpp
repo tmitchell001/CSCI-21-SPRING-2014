@@ -34,7 +34,7 @@ void btassert(A assertion);
 void unittest ();
 bool compareArrays (int arrayOne[], int arrayTwo[], unsigned int size);
 
-int main (int argc, char* argv[])
+int main ()
 {
 	unittest();
 	
@@ -47,14 +47,20 @@ int main (int argc, char* argv[])
  * @param size an unsigned integer containing the size of theArray
  */
 void bubbleSort (int theArray[], unsigned int size) {
-    for (int i = 1, i < size, i++) {
+    for (unsigned int j = 0; j < size; j++) {
+        for (unsigned int i = 1; i < size; i++) {
         unsigned int LHS = i - 1;
         unsigned int RHS = i;
         if (theArray[LHS] > theArray[RHS]) {
-            swap(theArray, LHS, RHS);
+            swapValues(theArray, LHS, RHS);
         }
     }
+    }
 }
+ //   for (unsigned int i = 0; i < size; i++) {
+   //     cout << theArray[i];
+   // }
+//}
 
 /*
  * Apply the selection sort algorithm to sort an array of integers.
@@ -62,11 +68,18 @@ void bubbleSort (int theArray[], unsigned int size) {
  * @param size an unsigned integer containing the size of theArray
  */
 void selectionSort (int theArray[], unsigned int size) {
-    int lowest = theArray[0];
-    for (int i = 1, i < size, i++) {
-        if (theArray[i] < lowest) {
-            swap(theArray, theArray[i], lowest);
+    for (unsigned int j = 0; j < size; j++) {
+            int lowest = j;
+        for (unsigned int i = j + 1; i < size; i++) {
+            if (theArray[i] < theArray[lowest]) {
+                lowest = i;
+                
+            }
         }
+        swapValues(theArray, j, lowest);
+    }
+        for (unsigned int i = 0; i < size; i++) {
+    cout << theArray[i];
     }
 }
 
