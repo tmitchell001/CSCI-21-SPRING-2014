@@ -100,15 +100,16 @@ int main ()
      * Default constructor.
      * Initializes maxItems to 10 and itemCount to 0.
      */
-    ShoppingList (maxItems = 10, itemCount = 0) {
-        
+    ShoppingList::ShoppingList()
+        :maxItems(10), itemCount(0) 
+    {
     }
     /*
      * Get the maximum number of items in this ShoppingList.
      * @return an unsigned integer containing the maximum number of items
      *         in this ShoppingList
      */
-    unsigned int getMaxItems () const {
+    unsigned int ShoppingList::getMaxItems () const {
         return maxItems;
     }
 
@@ -117,7 +118,7 @@ int main ()
      * @return an unsigned integer containing the count of number of items
      *         in this ShoppingList
      */
-    unsigned int getItemCount () const {
+    unsigned int ShoppingList::getItemCount () const {
         return itemCount;
     }
 
@@ -127,9 +128,9 @@ int main ()
      * @param theItem a string containing the item to be added to the array
      * @return true if the item can be added, otherwise return false
      */
-    bool addItem (string theItem) {
+    bool ShoppingList::addItem (string theItem) {
         if (maxItems > itemCount) {
-            itemCount item[itemCount + 1] = theItem;
+            items[itemCount + 1] = theItem;
             return true;
         }
         else
@@ -144,12 +145,12 @@ int main ()
      *         at the specified index
      * @throw ArrayException with the message "INVALID ARRAY INDEX" if index is invalid
      */
-    string getItem (unsigned int index) const {
+    string ShoppingList::getItem (unsigned int index) const {
         if (index <= maxItems - 1) {
             return items[index];
         }
         else
-        throw ArrayExeption "INVALID ARRAY INDEX";
+        throw ArrayException ("INVALID ARRAY INDEX");
     }
 
     /*
@@ -159,12 +160,12 @@ int main ()
      * @return if index is valid, a reference to the string at the specified index
      * @throw ArrayException with the message "INVALID ARRAY INDEX" if index is invalid
      */
-    string& getItem (unsigned int index) {
+    string& ShoppingList::getItem (unsigned int index) {
         if (index <= maxItems - 1) {
-            return &items[index];
+            return items[index];
         }
         else
-        throw ArrayException "INVALID ARRAY INDEX";
+        throw ArrayException ("INVALID ARRAY INDEX");
     }
 
     /*
@@ -175,7 +176,7 @@ int main ()
      * @return the value of the string at the specified index
      * @throw ArrayException with the message "INVALID ARRAY INDEX" if index is invalid
      */
-    string removeItem (unsigned int index) {
+    string ShoppingList::removeItem (unsigned int index) {
         if (index <= maxItems - 1) {
             items[index] = "";
             for (unsigned int i = index; i < maxItems - 1; i++) {
@@ -184,7 +185,7 @@ int main ()
             return items[index];
         }
         else
-            throw ArrayException "INVALID ARRAY INDEX";
+            throw ArrayException ("INVALID ARRAY INDEX");
     }
 
 /*
