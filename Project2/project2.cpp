@@ -15,6 +15,7 @@ int main (int argc, char* argv[])
 {
     unittest();
 Prize car;
+car.setItemName("Car");
 	
 cout << "Let's start by making a box.\n";
 box box1;
@@ -24,7 +25,9 @@ box1.setBoxNumber(1);
 cout << "The box is number" << box1.getBoxNumber() << ".";
 box1.addPrize(car);
 cout << "The prize is a " << box1.getPrize() << ".";
-
+cout << "The prize is a " << car.getItemName() << ".";
+car.setItemValue(100000000);
+cout << "The prize is worth " << car.getItemValue() << ".";
 	
     return 0;
 }

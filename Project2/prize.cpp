@@ -1,13 +1,17 @@
 #include "prize.h"
-    void getitemName() {
-        return itemName;
-    }
-    void setitemName(newItemName) {
-        itemName = newItemName;
-    }
-    void getitemValue() {
-        return itemValue;
-    }
-    void setitemValue(newItemValue) {
-        itemValue = newItemValue;
-    }
+#include <iostream>
+#include <string>
+using namespace std;
+
+string prize::getitemName() {
+    return itemName;
+}
+void prize::setitemName(newItemName) {
+    itemName = newItemName;
+}
+unsigned int prize::getitemValue() {
+    return itemValue;
+}
+void prize::setitemValue(newItemValue) {
+    itemValue = newItemValue;
+}
