@@ -3,6 +3,12 @@
 #include <string>
 using namespace std;
 
+prize::prize(string itemName, unsigned int itemValue);
+
+~prize() {
+            
+}
+
 string prize::getitemName() {
     return itemName;
 }

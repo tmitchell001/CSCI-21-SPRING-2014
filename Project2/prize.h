@@ -5,12 +5,8 @@ using namespace std;
 
 class prize {
     public:
-        prize(itemName = "NO NAME", itemValue = 0);
-        prize(itemName, itemValue);
-        ~prize() {
-            
-        };
-        friend overloaded operator==:
+        prize(string itemName, unsigned int itemValue);
+         overloaded friend operator==:
             if (prizeName == prizeName && prizeValue == prizeValue)
                 return true;
             else

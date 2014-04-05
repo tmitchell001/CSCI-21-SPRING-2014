@@ -1,4 +1,16 @@
 #include "box.h"
+
+box(unsigned int boxNumber, string boxColor, prizeCapacity, prizeCount) {
+        boxNumber = 0;
+        boxColor = "NO COLOR";
+        prizeCapacity = 5;
+        prizeCount = 0;
+    }
+    ~box() {
+        delete box;
+    }
+    
+
 void getBoxColor() {
     return boxColor;
 }
@@ -27,5 +39,7 @@ bool addPrize(Prize newPrize) {
     else return false;
         
 }
-Prize& getPrize(unsigned int);
+string getPrize(unsigned int) {
+    return car.getItemName();
+}
 Prize removePrize(unsigned int);

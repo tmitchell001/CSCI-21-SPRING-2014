@@ -1,30 +1,29 @@
 #pragma once
+#include "prize.h"
+#include <cassert>
+#include <iostream>
+#include <string>
+using namespace std;
+
 class box {
-public
-    box() {
-        boxNumber = 0;
-        boxColor = "NO COLOR";
-        prizeCapacity = 5;
-        prizeCount = 0;
-    }
-    box(boxNumber, boxColor, prizeCapacity, prizeCount)
-    ~box() {
-        delete box;
+public:
+    
     void getBoxColor();
     void setBoxColor();
     void getBoxNumber();
     void setBoxNumber();
     void getPrizeCapacity();
     void getPrizeCount();
-    bool addPrize(Prize);
-    Prize& getPrize(unsigned int);
-    Prize removePrize(unsigned int);
-    }
+    bool addPrize(prize newPrize);
+    string getPrize(unsigned int);
+    prize removePrize(unsigned int);
+
 private:
+
     unsigned int boxNumber;
     string boxColor;
-    Prize scratch;
-    Prize* prizes;
+    string scratch;
+    class Prize* prizes;
     unsigned int prizeCapacity;
     unsigned int prizeCount;
 };
