@@ -122,9 +122,9 @@ int main ()
  * Default constructor.
  * Initializes maxItems to 25, items to size maxItems, and itemCount to 0.
  */
-ShoppingList ()
-:maxItems(25), itemCount(0) {
-   items[maxItems];
+ShoppingList::ShoppingList ()
+:maxItems(25), itemCount(0), items([maxItems]) {
+   
 }
 
 /*
@@ -133,7 +133,7 @@ ShoppingList ()
  * @param newMaxItems an unsigned integer containing the desired size of
  *        the items array
  */
-ShoppingList (unsigned int newMaxItems) {
+ShoppingList::ShoppingList (unsigned int newMaxItems) {
     maxItems = newMaxItems;
     items[maxItems];
     itemCount = 0;
@@ -143,7 +143,7 @@ ShoppingList (unsigned int newMaxItems) {
  * Destructor.
  * Frees the memory associated with items.
  */
-virtual ~ShoppingList () {
+virtual ShoppingList::~ShoppingList () {
     itemCount = 0;
     delete maxItems;
     delete items;
@@ -154,7 +154,7 @@ virtual ~ShoppingList () {
  * @return an unsigned integer containing the maximum number of items
  *         in this ShoppingList
  */
-unsigned int getMaxItems () const {
+unsigned int ShoppingList::getMaxItems () const {
     return maxItems;
 }
 
@@ -163,7 +163,7 @@ unsigned int getMaxItems () const {
  * @return an unsigned integer containing the count of number of items
  *         in this ShoppingList
  */
-unsigned int getItemCount () const {
+unsigned int ShoppingList::getItemCount () const {
     return itemCount;
 }
 		
@@ -173,7 +173,7 @@ unsigned int getItemCount () const {
  * @param theItem a string containing the item to be added to the array
  * @return true if the item can be added, otherwise return false
  */
-bool addItem (string theItem) {
+bool ShoppingList::addItem (string theItem) {
     if (itemCount < maxItems) {
         items[itemCount + 1] = theItem;
         itemCount++;
@@ -191,7 +191,7 @@ bool addItem (string theItem) {
  *         at the specified index
  * @throw ArrayException with the message "INVALID ARRAY INDEX" if index is invalid
  */
-string getItem (unsigned int index) const {
+string ShoppingList::getItem (unsigned int index) const {
     if (index <= itemCount + 1) {
         return items[index];
     }
@@ -206,7 +206,7 @@ string getItem (unsigned int index) const {
  * @return if index is valid, a reference to the string at the specified index
  * @throw ArrayException with the message "INVALID ARRAY INDEX" if index is invalid
  */
-string& getItem (unsigned int index) {
+string& ShoppingList::getItem (unsigned int index) {
         if (index <= itemCount + 1) {
         return *items[index];
     }
@@ -222,7 +222,7 @@ string& getItem (unsigned int index) {
  * @return the value of the string at the specified index
  * @throw ArrayException with the message "INVALID ARRAY SIZE" if newSize is less than 1
  */
-string removeItem (unsigned int index) {
+string ShoppingList::removeItem (unsigned int index) {
     string ShoppingList::removeItem (unsigned int index) {
         if (index <= maxItems - 1) {
             items[index] = "";
@@ -242,7 +242,7 @@ string removeItem (unsigned int index) {
  * @param newMaxItems an unsigned integer containing the desired max size of items
  * @throw ArrayException with the message "INVALID ARRAY SIZE" if newMaxItems is less than 1
  */
-void reset (unsigned int newMaxItems) {
+void ShoppingList::reset (unsigned int newMaxItems) {
     delete items[];
     if (newMaxItems >= 1) {
         items[newMaxItems];
