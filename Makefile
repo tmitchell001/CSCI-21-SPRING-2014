@@ -86,5 +86,5 @@ pc16: pc16.cpp
 
 # Target for programming challenge 17
 # date completed: 4-7-2014
-pc17: pc17.cpp
+pc17: pc17.cpp SLNode.cpp SLNode.h
 	g++ $(FLAGS) -o pc17 pc17.cpp

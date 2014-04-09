@@ -2,7 +2,7 @@
  * Programming Challenge 17 - UNIT TEST
  */
 
-// #include "SLNode.h"
+#include "SLNode.h"
 
 #include <cassert>
 #include <cstdlib>
