@@ -1,29 +1,29 @@
 include "pc17.h"
 
-SLNode()
+SLNode::SLNode()
 : next(NULL), data(0)
 {
 }
 
-SLNode(int newData)
+SLNode::SLNode(int newData)
 : next(NULL), data(newData)
 {
 }
 
-~SLNode() {
+SLNode::~SLNode() {
     next = NULL;
     data = 0;
 }
 
-int getdata() {
+int SLNode::getContents() {
     return data;   
 }
-SLNode* getNext() {
+SLNode* SLNode::getNextNode() {
     return next;
 }
-void setNext(SLNode* newNext) {
+void SLNode::setNextNode(SLNode* newNext) {
     next = newNext;
 }
-void setData(int newData) {
+void SLNode::setContents(int newData) {
     data = newData;
 }
