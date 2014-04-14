@@ -2,7 +2,7 @@
  * Programming Challenge 18 - UNIT TEST
  */
 
-//#include "SList.h"
+#include "SList.h"
 
 #include <cassert>
 #include <cstdlib>
