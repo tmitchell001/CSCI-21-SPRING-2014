@@ -1,5 +1,7 @@
 #pragma once
-
+#include "SLNode.h"
+#include <string>
+using namespace std;
 
 class SList {
     private:
@@ -13,4 +15,4 @@ class SList {
         void clear ();
         unsigned int getSize () const;
         string toString () const;
-}
+};
