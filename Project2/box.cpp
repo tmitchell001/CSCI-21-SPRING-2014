@@ -1,37 +1,42 @@
 #include "box.h"
 
-box(unsigned int boxNumber, string boxColor, prizeCapacity, prizeCount) {
-        boxNumber = 0;
-        boxColor = "NO COLOR";
-        prizeCapacity = 5;
-        prizeCount = 0;
-    }
-    ~box() {
-        delete box;
-    }
+box::box(unsigned int boxNumber, string boxColor, prizeCapacity, prizeCount) {
+    boxNumber = 0;
+    boxColor = "NO COLOR";
+    prizeCapacity = 5;
+    prizeCount = 0;
+}
+    
+box::~box() {
+    delete box;
+}
     
 
-void getBoxColor() {
+void box::getBoxColor() {
     return boxColor;
 }
-void setBoxColor(newColor) {
-    cout << "Box Color?" << endl;
+
+void box::setBoxColor(newColor) {
     boxColor = newColor;
 }
-void getBoxNumber() {
+
+void box::getBoxNumber() {
     return boxNumber;
 }
-void setBoxNumber(newNumber) {
-    cout << "Box Number?\n";
+
+void box::setBoxNumber(newNumber) {
     boxNumber = newNumber;
 }
-void getPrizeCapacity() {
+
+void box::getPrizeCapacity() {
     return prizeCapacity;
 }
-void getPrizeCount() {
+
+void box::getPrizeCount() {
     return prizeCount;
 }
-bool addPrize(Prize newPrize) {
+
+bool box::addPrize(Prize newPrize) {
     if (prizeCapacity > prizeCount) {
         prize[prizeCount] = newPrize;
         return true;
@@ -39,7 +44,7 @@ bool addPrize(Prize newPrize) {
     else return false;
         
 }
-string getPrize(unsigned int) {
+string box::getPrize(unsigned int) {
     return car.getItemName();
 }
-Prize removePrize(unsigned int);
+Prize box::removePrize(unsigned int);
