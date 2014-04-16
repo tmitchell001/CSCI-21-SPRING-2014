@@ -51,47 +51,46 @@ void SList::removeTail () {
     }
     delete i;
     size--;
-    if (i == trailer) {
-        delete i;
+    if (i == head) {
         head = NULL;
     }
-    if (trailer == NULL)
-        head = NULL;
+    else
+        trailer -> setNextNode(NULL);
     }
-    }
+}
     
-void insert(int newData) {
-    SLNode newNode(newData);
+void SList::insert(int newData) {
+    SLNode* newNode = new SLNode(newData);
     if (head == NULL)
         insertHead(newData);
     else if (head -> getNextNode() == NULL) {
-        if (head.getContents() > newData)
+        if ((*head).getContents() > newData)
             insertHead(newData);
         else
             insertTail(newData);
     }
     else {
-        if (data < head -> getContent())
+        if (newData <= head -> getContents())
             insertHead(newData);
         else {
-            SLNode* Trailer = NULL;
+            SLNode* trailer = NULL;
             SLNode* spot = head;
-            spot -> getNextNode() = NULL;
-            while (spot -> getNextNode() != NULL && newData > newData -> getContents())
+            while (spot -> getNextNode() != NULL && newData > spot -> getContents()) {
                 trailer = spot;
                 spot = spot -> getNextNode();
-            if (data > spot -> getContents && newData -> getContents())
+            }
+            if (newData > spot -> getContents() && spot -> getNextNode() == NULL)
                 insertTail(newData);
             else {
                 newNode -> setNextNode(spot);
                 trailer -> setNextNode(newNode);
-                size++
+                size++;
             }
         }
     }
 }
 
-bool removeFirst(int target) {
+bool SList::removeFirst(int target) {
     if (head == NULL)
         return false;
     else {
@@ -103,6 +102,10 @@ bool removeFirst(int target) {
         }
     if (spot == NULL)
         return false;
+    else if (trailer == NULL) {
+        removeHead();
+        return true;
+    }
     else {
         trailer -> setNextNode(spot -> getNextNode());
         delete spot;
@@ -123,10 +126,11 @@ unsigned int SList::getSize () const {
 
 string SList::toString () const {
     stringstream ss;
-    for (unsigned int i = 0; i != size; i++) {
-        ss << head << ",";
+    for (SLNode* i = head; i != NULL; i = i -> getNextNode()) {
+        ss << i->getContents();
+        if (i -> getNextNode() != NULL)
+            ss << ",";
     }
-    ss << ";";
     string list = ss.str();
     return list;
 }
