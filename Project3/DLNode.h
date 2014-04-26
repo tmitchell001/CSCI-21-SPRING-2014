@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-class DLNode {
+class DLNode{
     public:
         DLNode ();
         DLNode (int newContents);
@@ -17,4 +17,5 @@ class DLNode {
         int contents;
         DLNode* nextNode;
         DLNode* previousNode;
+    
 };

@@ -11,7 +11,7 @@ DLNode::DLNode (int newContents) {
     previousNode = NULL;
 }
 
-virtual DLNode::~DLNode () {
+DLNode::~DLNode () {
     
 }
 
