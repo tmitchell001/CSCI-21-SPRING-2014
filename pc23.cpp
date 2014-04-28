@@ -70,7 +70,11 @@ bool wordIsPalindrome (string word) {
  *         if the startIndex is >= the size of the array
  */
 string arrayForwardsAsString (int array[], unsigned int startIndex, unsigned int size) {
-    
+    stringstream ss;
+    if (startIndex != size) {
+        ss << array[startIndex] << " " << arrayForwardsAsString(array, startIndex + 1, size);
+    }
+    return ss.str();
 }
 
 
@@ -86,7 +90,11 @@ string arrayForwardsAsString (int array[], unsigned int startIndex, unsigned int
  *         if the startIndex is < zero
  */
 string arrayBackwardsAsString (int array[], int startIndex, unsigned int size) {
-    
+    stringstream ss;
+    if (startIndex >= 0) {
+        ss << array[startIndex] << " " << arrayBackwardsAsString(array, startIndex - 1, size);
+    }
+    return ss.str();
 }
 
 
