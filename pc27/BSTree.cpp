@@ -17,6 +17,44 @@ void BSTree::clear() {
     pClear(root);
 }
 
+bool BSTree::remove(int data) {
+    return pRemove(data, root);
+}
+
+bool BSTree::pRemove(int data, BSTNode*& rootPtr) {
+    if (rootPtr == NULL) {
+        return false;
+    }
+    else if (data < rootPtr -> getContents()) {
+        return pRemove(data, rootPtr -> getLeftChild());
+    }
+    else if (data > rootPtr -> getContents()) {
+        return pRemove(data, rootPtr -> getRightChild());
+    }
+    else {
+        if (rootPtr -> getLeftChild() == NULL) {
+            BSTNode* oldPtr = rootPtr;
+            rootPtr = rootPtr -> getRightChild();
+            delete oldPtr;
+        }
+        else
+            pRemoveMax(rootPtr -> getContents(), rootPtr -> getLeftChild());
+            size--;
+            return true;
+    }
+}
+
+void BSTree::pRemoveMax(int& removed, BSTNode*& rootPtr) {
+    if (rootPtr -> getRightChild() == NULL) {
+        BSTNode* maxNode = rootPtr;
+        removed = rootPtr -> getContents();
+        rootPtr = rootPtr -> getLeftChild();
+        delete maxNode;
+    }
+    else
+        pRemoveMax(removed, rootPtr -> getRightChild());
+}
+
 unsigned int BSTree::getSize() const {
     return size;
 }
