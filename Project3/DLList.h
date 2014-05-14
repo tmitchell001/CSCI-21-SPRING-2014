@@ -1,3 +1,7 @@
+//
+// Grader comments 2014.05.12
+// Need function documentation in header files. -50 points
+// 
 #pragma once
 #include <iostream>
 #include "DLNode.h"

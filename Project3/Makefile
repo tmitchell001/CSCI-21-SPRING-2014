@@ -1,4 +1,4 @@
-FLAGS = -Wall -Wextra -Werror -pedantic
+FLAGS = -Wall -Wextra -Werror -pedantic -Wno-newline-eof
 
 project3: DLList.o DLNode.o project3.o
 	g++ $(FLAGS) DLList.o DLNode.o project3.o -o project3
