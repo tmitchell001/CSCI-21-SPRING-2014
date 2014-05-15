@@ -1,6 +1,6 @@
 //
 // Grader comments 2014.05.13
-// -120 points total
+// -155 points total
 //
 #include "DLList.h"
 
@@ -67,10 +67,22 @@ void DLList::pushBack(DLNode newContents) {
     }
 }
 
+//
+// Grader comments 2014.05.15
+// Doesn't insert node onto empty list.
+// -10 points
+//
 void DLList::insert (int newContents) {
     DLNode* newNode = new DLNode(newContents);
-    if (head == NULL)
-        DLNode(newContents);
+//    if (head == NULL)								// Rob
+//        DLNode(newContents);						// Rob
+	
+	// Rob
+	if(head == NULL) {
+		head = tail = newNode;
+		size++;
+	}
+	
     else if (head -> getNext() == NULL) {
         if ((*head).getContents() > newContents)
             pushFront(newContents);
@@ -98,20 +110,38 @@ void DLList::insert (int newContents) {
     }
 }
 
+//
+// Grader comments 2014.05.15
+// Doesn't handle empty list properly. Must throw an exception.
+// -10 points
 int DLList::getFront () const {
+	if(head == NULL) {	// Rob
+		throw false;
+	}
     return head -> getContents();
 }
 
+//
+// Grader comments 2014.05.15
+// Doesn't handle empty list properly. Must throw an exception.
+// -10 points
 int DLList::getBack () const {
+	if(head == NULL) {	// Rob
+		throw false;
+	}
     return tail -> getContents();
 }
 
 //
 // Grader comments 2014.05.13
-// Hangs the program, because 'spot' never changes in the while() loop
+// Hangs the program, because 'spot' never changes in the while() loop.
+// Doesn't report empty list.
 // -20 points.
 //
 bool DLList::get (int target) const {
+	if(head == NULL) {	// Rob
+		throw false;
+	}
     DLNode* spot = head;
     DLNode* trailer = NULL;
     while (spot != NULL) {
@@ -130,6 +160,7 @@ bool DLList::get (int target) const {
 // Grader comments 2014.05.13
 // Doesn't manage tail when necessary.
 // Doesn't zero out head's prev pointer when necessary.
+// Doesn't report empty list to driver.
 // -20 points.
 //
 void DLList::popFront() {
@@ -146,12 +177,18 @@ void DLList::popFront() {
 			head->setPrevious(0);
 		}
     }
+	
+	// Rob
+	else {
+		throw false;
+	}
 }
 
 //
 // Grader comments 2014.05.13
 // Doesn't manage tail when necessary.
 // Doesn't zero out head's prev pointer when necessary.
+// Doesn't report empty list to driver.
 // -20 points.
 //
 void DLList::popBack() {
@@ -168,11 +205,27 @@ void DLList::popBack() {
 			tail->setNext(0);
 		}
     }
+	
+	// Rob
+	else {
+		throw false;
+	}
 }
 
+//
+// Grader comments 2014.05.13
+// Doesn't manage tail when necessary.
+// Doesn't insert new node properly.
+// Doesn't report empty list to driver.
+// -20 points.
+//
+
 bool DLList::removeFirst(int target) {
-    if (head == NULL)
-        return false;
+    //if (head == NULL)		// Rob
+    //    return false;		// Rob
+	if(head == NULL) {		// Rob
+		throw false;
+	}
     else {
         DLNode* trailer = NULL;
         DLNode* spot = head;
@@ -187,12 +240,6 @@ bool DLList::removeFirst(int target) {
             return true;
         }
         else {
-//
-// Grader comments 2014.05.13
-// Doesn't manage tail when necessary.
-// Doesn't insert new node properly.
-// -15 points.
-//
             trailer -> setNext(spot -> getNext());
 			
 			// RFB
