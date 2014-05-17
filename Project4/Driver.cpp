@@ -19,7 +19,7 @@ int main (int argc, char* argv[]) {
             getline(filein, nextline);
             do {
                 getline(filein, nextline);
-                int ivalue = 0;
+                string ivalue;
                 char functionCall;
 	            stringstream converter(nextline);
 	            converter.exceptions(ios_base::failbit);
@@ -29,6 +29,7 @@ int main (int argc, char* argv[]) {
 		        converter >> ivalue;
 		        }
 	            catch (ios_base::failure f) {}
+	            ivalue = new Word(ivalue);
 	            if (functionCall == '#') {
 	            }
 	            else if (functionCall == 'C') {
