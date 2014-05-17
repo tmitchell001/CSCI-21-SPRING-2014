@@ -29,7 +29,7 @@ int main (int argc, char* argv[]) {
 		        converter >> ivalue;
 		        }
 	            catch (ios_base::failure f) {}
-	            ivalue = new Word(ivalue);
+	            Word word(ivalue);
 	            if (functionCall == '#') {
 	            }
 	            else if (functionCall == 'C') {
@@ -58,32 +58,32 @@ int main (int argc, char* argv[]) {
 	            }
 	            else if (functionCall == 'I') {
 	                if (created == true) {
-	                    if (tree.insert(ivalue)) {
-	                        cout << "WORD " << ivalue << "INCREMENTED";	                        
+	                    if (tree.insert(word)) {
+	                        cout << "WORD " << word << "INCREMENTED";	                        
 	                    }
 	                    else
-                            cout << "WORD " << ivalue << "INSERTED";
+                            cout << "WORD " << word << "INSERTED";
 	                }
 	                else
 	                    cout << "MUST CREATE LIST INSTANCE";
 	            }
 	            else if (functionCall == 'F') {
 	                if (created == true) {
-	                    if (tree.insert(ivalue) == false)
-	                        cout << "FOUND" << ivalue;
+	                    if (tree.insert(word) == false)
+	                        cout << "FOUND" << word;
 	                    else
-	                        cout << ivalue << "NOT FOUND";
+	                        cout << word << "NOT FOUND";
 	                }
 	                else
 	                    cout << "MUST CREATE LIST INSTANCE";
 	            }
 	            else if (functionCall == 'R') {
 	                if (created == true) {
-	                    if (ivalue.getRoot() == NULL) {
+	                    if (tree.getRoot() == NULL) {
 	                        cout << "TREE EMPTY";
 	                    }
 	                    else {
-	                    tree.remove(ivalue);
+	                    tree.remove(word);
 	                    cout << "REMOVED" << "x";
 	                    }
 	                }

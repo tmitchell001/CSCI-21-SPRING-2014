@@ -92,7 +92,7 @@ class SearchTree {
                 return false;
         }
         
-        void pClear(TreeNode<string>*& troot) {
+        void pClear(TreeNode*& troot) {
             if (troot != NULL) {
                 pClear(troot -> getLeftChild());
                 pClear(troot -> getRightChild());
