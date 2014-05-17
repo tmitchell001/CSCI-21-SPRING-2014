@@ -154,7 +154,7 @@ bool replaceWord (string* theString, string oldWord, string newWord) {
         return false;
     }
     else {
-    (*theString).replace((*theString).find(oldWord), oldWord.length(), newWord);
+    (*theString).replace((*theString).find(oldWord), oldWord.length(), newWord); 
         return true;
     }
 }
