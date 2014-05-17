@@ -78,7 +78,7 @@ int main (int argc, char* argv[]) {
 	            }
 	            else if (functionCall == 'R') {
 	                if (created == true) {
-	                    if (tree.getRoot() == NULL) {
+	                    if (ivalue.getRoot() == NULL) {
 	                        cout << "TREE EMPTY";
 	                    }
 	                    else {
