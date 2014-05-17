@@ -154,13 +154,7 @@ bool replaceWord (string* theString, string oldWord, string newWord) {
         return false;
     }
     else {
-	//
-	// Grader comments 2014.03.14
-	//
-	// Careful with the indentation. A reader taking a quick glance at this code
-	// would be confused.
-	//
-    (*theString).replace((*theString).find(oldWord), oldWord.length(), newWord);
+    (*theString).replace((*theString).find(oldWord), oldWord.length(), newWord); 
         return true;
     }
 }
