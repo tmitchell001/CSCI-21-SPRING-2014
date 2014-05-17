@@ -26,7 +26,7 @@ class SearchTree {
         }
         
         void clear() {
-            pClear(root);
+           // pClear(root);
         }
         
         bool remove(T data) {
@@ -92,14 +92,14 @@ class SearchTree {
                 return false;
         }
         
-        void pClear(TreeNode*& troot) {
-            if (troot != NULL) {
-                pClear(troot -> getLeftChild());
-                pClear(troot -> getRightChild());
-                delete troot;
-                size--;
-                troot = NULL;
-            }
+        void pClear(int troot) {
+//            if (troot != NULL) {
+  //              pClear(troot -> getLeftChild());
+    //            pClear(troot -> getRightChild());
+      //          delete troot;
+        //        size--;
+          //      troot = NULL;
+            //}
         }
         
         void pInOrder(SearchTree* troot) {

@@ -58,7 +58,8 @@ int main (int argc, char* argv[]) {
 	            }
 	            else if (functionCall == 'I') {
 	                if (created == true) {
-	                    if (tree.insert(word)) {
+	                    if (//tree.insert(word)
+	                    true) {
 	                        cout << "WORD " << word << "INCREMENTED";	                        
 	                    }
 	                    else
@@ -69,7 +70,8 @@ int main (int argc, char* argv[]) {
 	            }
 	            else if (functionCall == 'F') {
 	                if (created == true) {
-	                    if (tree.insert(word) == false)
+	                    if (//tree.insert(word) == false
+	                    true)
 	                        cout << "FOUND" << word;
 	                    else
 	                        cout << word << "NOT FOUND";
@@ -79,11 +81,11 @@ int main (int argc, char* argv[]) {
 	            }
 	            else if (functionCall == 'R') {
 	                if (created == true) {
-	                    if (tree.getRoot() == NULL) {
+	                    if (true) {
 	                        cout << "TREE EMPTY";
 	                    }
 	                    else {
-	                    tree.remove(word);
+	                    //tree.remove(word);
 	                    cout << "REMOVED" << "x";
 	                    }
 	                }
