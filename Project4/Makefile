@@ -14,7 +14,7 @@ project4: Driver.cpp TreeNode.o SearchTree.o
 
 # Target for class TreeNode
 TreeNode.o: TreeNode.h
-	g++ -c $(FLAGS) TreeNode.h -o TreeNode.o
+	g++ -c $(FLAGS) -o TreeNode.o
 
 # Target for class SearchTree
 SearchTree.o: SearchTree.h
