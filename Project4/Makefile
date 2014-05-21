@@ -18,7 +18,7 @@ TreeNode.o: TreeNode.h
 
 # Target for class SearchTree
 SearchTree.o: SearchTree.h
-	g++ -c $(FLAGS) SearchTree.h -o SearchTree.o
+	g++ -c $(FLAGS) -o SearchTree.o
 
 # Target for class Word
 Word.o: Word.h Word.cpp
